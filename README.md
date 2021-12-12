@@ -1,6 +1,7 @@
 # Tidbyt Twitch Subscriber Counter
 
 This is an app to show your current Twitch.tv subscribers on your tidbyt.
+![App preview](https://i.imgur.com/ekw3yQy.gif)
 ## Installation
 
 Use the [Tidbyt Push API](https://tidbyt.dev/docs/tidbyt-api/b3A6MTYyODkwOA-push-to-a-device) to install the app.
