@@ -1,4 +1,4 @@
-# Tidbyt noz.de RSS feed
+# noz.de RSS feed
 
 This is an app to show your current Twitch.tv subscribers on your tidbyt.  
 ![App preview](https://i.imgur.com/HryKH7U.gif)
