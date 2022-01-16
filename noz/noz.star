@@ -3,7 +3,7 @@ load("http.star", "http")
 load("xpath.star", "xpath")
 load("time.star", "time")
 
-NOZ_RSS_FEED = "https://www.noz.de/rss/ressort/Osnabr%C3%BCck"
+NOZ_RSS_FEED = "https://www.noz.de/rss/ressort/Osnabrück"
 
 def main():
     news = http.get(
@@ -12,11 +12,10 @@ def main():
 
     xml = xpath.loads(news.body())
     
-    title = xml.query("/rss/channel/item/title")
-    pubDate = xml.query("/rss/channel/item/pubDate")
-    timeObject = time.parse_time(pubDate, "Mon, 2 Jan 2006 15:04:05 -0700")
-
-    pubDate = timeObject.format("15:04")
+    title1 = xml.query("/rss/channel/item[1]/title")
+    pubDate1 = xml.query("/rss/channel/item[1]/pubDate")
+    timeObject1 = time.parse_time(pubDate1, "Mon, 2 Jan 2006 15:04:05 -0700")
+    pubDate1 = timeObject1.format("15:04")
 
     return render.Root(
         child = render.Column(
@@ -30,25 +29,38 @@ def main():
                         cross_align="center",
                         children = [
                             render.Text(
-                               content="noz.de - " + pubDate,
+                               content="noz.de",
                                color="#00386c",
                             )
                         ],
                     ),
                 ),
                 render.Box(
-                    height=24,
+                    height=8,
+                    child=render.Row(
+                        expanded=True, 
+                        main_align="space_evenly", 
+                        cross_align="center",
+                        children = [
+                            render.Text(
+                               content=pubDate1,
+                            )
+                        ],
+                    ),
+                ),
+                render.Box(
+                    height=16,
                     child=render.Row(
                         expanded=True, 
                         main_align="space_evenly", 
                         cross_align="center",
                         children = [
                             render.Marquee(
-                                height=24,
-                                child=render.WrappedText(
-                                    content="%s" % title,
+                                width=64,
+                                child=render.Text(
+                                    content="%s" % title1,
                                 ),
-                                scroll_direction="vertical"
+                                scroll_direction="horizontal"
                             )
                         ],
                     ),
