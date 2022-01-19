@@ -14,7 +14,7 @@ def main():
     
     title1 = xml.query("/rss/channel/item[1]/title")
     pubDate1 = xml.query("/rss/channel/item[1]/pubDate")
-    timeObject1 = time.parse_time(pubDate1, "Mon, 2 Jan 2006 15:04:05 -0700")
+    timeObject1 = time.parse_time(pubDate1)
     pubDate1 = timeObject1.format("15:04")
 
     return render.Root(
