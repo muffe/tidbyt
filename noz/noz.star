@@ -3,7 +3,7 @@ load("http.star", "http")
 load("xpath.star", "xpath")
 load("time.star", "time")
 
-NOZ_RSS_FEED = "https://www.noz.de/rss/ressort/Osnabrück"
+NOZ_RSS_FEED = "https://www.noz.de/rss"
 
 def main():
     news = http.get(
