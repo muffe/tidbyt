@@ -48,6 +48,8 @@ def main():
                             render.Marquee(
                                 width=64,
                                 height=24,
+                                offset_start=24,
+                                offset_end=24,
                                 child=render.WrappedText(
                                     content="%s" % title1,
                                 ),
