@@ -31,17 +31,7 @@ def main():
                             render.Text(
                                content="noz.de",
                                color="#00386c",
-                            )
-                        ],
-                    ),
-                ),
-                render.Box(
-                    height=8,
-                    child=render.Row(
-                        expanded=True, 
-                        main_align="space_evenly", 
-                        cross_align="center",
-                        children = [
+                            ),
                             render.Text(
                                content=pubDate1,
                             )
@@ -49,7 +39,7 @@ def main():
                     ),
                 ),
                 render.Box(
-                    height=16,
+                    height=24,
                     child=render.Row(
                         expanded=True, 
                         main_align="space_evenly", 
@@ -57,10 +47,11 @@ def main():
                         children = [
                             render.Marquee(
                                 width=64,
-                                child=render.Text(
+                                height=24,
+                                child=render.WrappedText(
                                     content="%s" % title1,
                                 ),
-                                scroll_direction="horizontal"
+                                scroll_direction="vertical"
                             )
                         ],
                     ),
